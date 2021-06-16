@@ -5,7 +5,7 @@ import { Navbar } from './components/Navbar/Navbar';
 import Exercises from './components/Exercises/Exercises';
 import Profile from './components/Profile/Profile';
 import Register from './components/Register/Register';
-import RoutePrivate from './hoc/RoutePrivate';
+
 
 function App() {
 
@@ -19,8 +19,8 @@ function App() {
           </Route>
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
-          <RoutePrivate path="/exercises" component={Exercises} />
-          <RoutePrivate path="/profile" component={Profile} />
+          <Route path="/exercises" component={Exercises} />
+          <Route path="/profile" component={Profile} />
         </Switch>
       </div>
     </BrowserRouter>

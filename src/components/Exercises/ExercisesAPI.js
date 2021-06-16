@@ -2,11 +2,11 @@ import { API_ERROR_INVALID_AUTH } from "../../util/api.util"
 
 export const ExercisesAPI = {
     getExercises() {
-        const { token } = JSON.parse(localStorage.getItem('rtxt-ss'))
+        //const { token } = JSON.parse(localStorage.getItem('rtxt-ss'))
         return fetch('https://localhost:44339/api/v1/exercises', {
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
+                //'Authorization': `Bearer ${token}`
             }
         }).then(async response => {
             if (response.status === 401) {

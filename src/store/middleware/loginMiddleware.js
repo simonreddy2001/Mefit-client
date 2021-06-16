@@ -1,4 +1,4 @@
-import { LoginAPI } from "../../components/Login/LoginAPI";
+/*import { Login } from "../../components/Login/Login";
 import { ACTION_LOGIN_ATTEMPT, ACTION_LOGIN_SUCCESS, loginErrorAction, loginSuccessAction } from "../actions/loginActions";
 import { sessionSetAction } from "../actions/sessionActions";
 
@@ -7,7 +7,7 @@ export const loginMiddleware = ({ dispatch }) => next => action => {
     next(action)
 
     if (action.type === ACTION_LOGIN_ATTEMPT) {
-        LoginAPI.login(action.payload)
+        Login.login(action.payload)
             .then(profile => {
                 dispatch(loginSuccessAction(profile))
             })
@@ -19,4 +19,4 @@ export const loginMiddleware = ({ dispatch }) => next => action => {
     if (action.type === ACTION_LOGIN_SUCCESS) {
         dispatch(sessionSetAction(action.payload))
     }
-}
+}*/
