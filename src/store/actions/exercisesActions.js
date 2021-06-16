@@ -1,36 +1,36 @@
-export const ACTION_POSTS_FETCHING = '[posts] FETCHING'
-export const ACTION_POSTS_SET = '[posts] SET'
-export const ACTION_POSTS_FETCH_ERROR = '[posts] FETCH_ERROR'
-export const ACTION_POSTS_CREATE = '[posts] CREATE'
-export const ACTION_POSTS_ADD = '[posts] ADD'
-export const ACTION_POSTS_CREATE_ERROR = '[posts] CREATE_ERROR'
+export const ACTION_EXERCISES_FETCHING = '[exercises] FETCHING'
+export const ACTION_EXERCISES_SET = '[exercises] SET'
+export const ACTION_EXERCISES_FETCH_ERROR = '[exercises] FETCH_ERROR'
+export const ACTION_EXERCISES_CREATE = '[exercises] CREATE'
+export const ACTION_EXERCISES_ADD = '[exercises] ADD'
+export const ACTION_EXERCISES_CREATE_ERROR = '[exercises] CREATE_ERROR'
 
 export const exercisesFetchingAction = () => ({
-    type: ACTION_POSTS_FETCHING
+    type: ACTION_EXERCISES_FETCHING
 })
 
-export const exercisesSetAction = posts => ({
-    type: ACTION_POSTS_SET,
-    payload: posts
+export const exercisesSetAction = exercises => ({
+    type: ACTION_EXERCISES_SET,
+    payload: exercises
 })
 
 export const exercisesFetchErrorAction = error => ({
-    type: ACTION_POSTS_FETCH_ERROR,
+    type: ACTION_EXERCISES_FETCH_ERROR,
     payload: error
 })
 
-export const exercisesCreateAction = post => ({
-    type: ACTION_POSTS_CREATE,
-    payload: post
+export const exercisesCreateAction = exercise => ({
+    type: ACTION_EXERCISES_CREATE,
+    payload: exercise
 })
 
-export const exercisesAddAction = post => ({
-    type: ACTION_POSTS_ADD,
-    payload: post
+export const exercisesAddAction = exercise => ({
+    type: ACTION_EXERCISES_ADD,
+    payload: exercise
 })
 
 
 export const exercisesCreateErrorAction = error => ({
-    type: ACTION_POSTS_CREATE_ERROR,
+    type: ACTION_EXERCISES_CREATE_ERROR,
     payload: error
 })

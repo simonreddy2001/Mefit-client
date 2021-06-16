@@ -3,7 +3,7 @@ import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import AppContainer from '../../hoc/AppContainer'
 import { sessionLogoutAction } from '../../store/actions/sessionActions'
-import ProfilePosts from './ProfilePosts'
+import ProfileView from './ProfileView'
 
 export const Profile = () => {
 
@@ -36,7 +36,7 @@ export const Profile = () => {
                 <button className="btn btn-warning" onClick={onLogoutClick}>Logout</button>
             </header>
 
-            <ProfilePosts />
+            <ProfileView />
         </AppContainer>
     )
 }

@@ -2,10 +2,12 @@ import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { profilePostsFetchingAction } from "../../store/actions/profilePostsActions"
 import Exercise from "../Exercises/Exercise"
+import Program from "../Programs/Program"
+import Workout from "../Workouts/Workout"
 
-const ProfilePosts = () => {
+const Profile = () => {
 
-    const { profilePosts } = useSelector(state => state.profilePostsReducer)
+    const { profile } = useSelector(state => state.profilePostsReducer)
     const session = useSelector(state => state.sessionReducer)
     const dispatch = useDispatch()
 
@@ -17,10 +19,12 @@ const ProfilePosts = () => {
         <>
             <h4 className="mb-3">Checkout your goals</h4>
             <section>
-                {profilePosts.map(post => <Exercise key={post.id} post={post} />)}
+                {profile.map(user => <Program key={user.id} user={user} />)}
+                {profile.map(user => <Exercise key={user.id} user={user} />)}
+                {profile.map(user => <Workout key={user.id} user={user} />)}
             </section>
         </>
 
     )
 }
-export default ProfilePosts
+export default Profile

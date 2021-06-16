@@ -1,13 +1,13 @@
 import { ExerciseCreateAPI } from "../../components/ExerciseCreate/ExerciseCreateAPI"
 import { ExercisesAPI } from "../../components/Exercises/ExercisesAPI"
 import { API_ERROR_INVALID_AUTH } from "../../util/api.util"
-import { ACTION_POSTS_CREATE, ACTION_POSTS_FETCHING, exercisesAddAction, exercisesCreateErrorAction, exercisesFetchErrorAction, exercisesSetAction } from "../actions/exercisesActions"
+import { ACTION_EXERCISES_CREATE, ACTION_EXERCISES_FETCHING, exercisesAddAction, exercisesCreateErrorAction, exercisesFetchErrorAction, exercisesSetAction } from "../actions/exercisesActions"
 import { sessionExpiredAction } from "../actions/sessionActions"
 
-export const postsMiddleware = ({ dispatch }) => next => action => {
+export const exercisesMiddleware = ({ dispatch }) => next => action => {
     next(action)
 
-    if (action.type === ACTION_POSTS_FETCHING) {
+    if (action.type === ACTION_EXERCISES_FETCHING) {
 
         ExercisesAPI.getExercises()
             .then(exercises => {
@@ -22,7 +22,7 @@ export const postsMiddleware = ({ dispatch }) => next => action => {
             })
     }
 
-    if (action.type === ACTION_POSTS_CREATE) {
+    if (action.type === ACTION_EXERCISES_CREATE) {
 
         ExerciseCreateAPI.createExercise(action.payload)
             .then(exercise => {

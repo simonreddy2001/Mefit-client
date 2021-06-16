@@ -1,6 +1,8 @@
 import { applyMiddleware } from "redux";
 import { appMiddleware } from "./appMiddleware";
-import { postsMiddleware } from "./postsMiddleware";
+import { exercisesMiddleware } from "./exercisesMiddleware";
+import { workoutsMiddleware } from "./workoutsMiddleware";
+import { programsMiddleware } from "./programsMiddleware";
 import { profilePostsMiddleware } from "./profilePostsMiddleware";
 import { registerMiddleware } from "./registerMiddleware";
 import { sessionMiddleware } from "./sessionMiddleware";
@@ -10,7 +12,9 @@ import { sessionMiddleware } from "./sessionMiddleware";
 export default applyMiddleware(
     appMiddleware,
     sessionMiddleware,
-    postsMiddleware,
+    exercisesMiddleware,
+    workoutsMiddleware,
+    programsMiddleware,
     registerMiddleware,
     profilePostsMiddleware
 )
