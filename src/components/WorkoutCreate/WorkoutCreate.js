@@ -12,18 +12,18 @@ const WorkoutCreate = () => {
 
     const [workout, setWorkout] = useState({
         name: '',
-        description: '',
+        type: '',
         postError: ''
     })
 
     const onPostSubmit = e => {
         e.preventDefault()
 
-        if (!workout.name || !workout.description) {
+        if (!workout.name || !workout.type) {
             mySwal.fire({
                 backdrop: true,
                 title: <p>Missed something</p>,
-                html: '<span class="material-icons">error</span><br>Please make sure you add a <b>title</b> and a <b>body</b> for the post 👌',
+                html: '<span class="material-icons">error</span><br>Please make sure you add a <b>name</b> and a <b>type</b> for the post 👌',
                 confirmButtonText: 'Gotcha'
             }).then(_ => {})
             return;
@@ -32,7 +32,7 @@ const WorkoutCreate = () => {
         dispatch(workoutsCreateAction({ ...workout, userId }))
         setWorkout({
             name: '',
-            description: '',
+            type: '',
             workoutError: ''
         })
     }
@@ -62,25 +62,25 @@ const WorkoutCreate = () => {
                     </div>
 
                     <div className="mb-3">
-                        <label htmlFor="description" className="form-label visually-hidden" aria-label="Workout description">Workout description</label>
-                        <textarea id="description" onChange={ onInputChange } 
+                        <label htmlFor="type" className="form-label visually-hidden" aria-label="Workout type">Workout type</label>
+                        <textarea id="type" onChange={ onInputChange } 
                                     rows="2" 
                                     className="form-control" 
-                                    placeholder="Workout description" 
-                                    value={ workout.description }
+                                    placeholder="Workout type" 
+                                    value={ workout.type }
                                     ></textarea>
                     </div>
 
                     <div className="mb-3">
-                        <label htmlFor="target" className="form-label visually-hidden" aria-label="Workout target muscle group">Workout target muscle group</label>
-                        <textarea id="target" onChange={ onInputChange } 
+                        <label htmlFor="complete" className="form-label visually-hidden" aria-label="Workout complete">Workout complete</label>
+                        <textarea id="complete" onChange={ onInputChange } 
                                     className="form-control" 
-                                    placeholder="Workout target muscle group" 
-                                    value={ workout.targetMuscleGroup }
+                                    placeholder="Workout complete" 
+                                    value={ workout.complete }
                                     ></textarea>
                     </div>
 
-                    <button className="btn btn-warning d-flex" type="submit">
+                    <button className="btn btn-success d-flex" type="submit">
                         <span className="material-icons">create</span> &nbsp;
                         <span>Create Workout</span>
                     </button>

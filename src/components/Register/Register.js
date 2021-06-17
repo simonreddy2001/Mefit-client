@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Link, Redirect } from "react-router-dom"
+import { KeycloakContext } from "../../context/KeycloakContext"
 import AppContainer from "../../hoc/AppContainer"
 import { registerAttemptAction } from "../../store/actions/registerActions"
 
@@ -11,9 +12,9 @@ const Register = () => {
     const { loggedIn } = useSelector(state => state.sessionReducer)
 
     const [user, setUser] = useState({
-        username: '',
-        password: '',
-        confirmPassword: ''
+        email: KeycloakContext.email,
+        firstname: KeycloakContext.firstname,
+        lastname: KeycloakContext.lastname
     })
 
     const onInputChange = e => {
@@ -31,23 +32,23 @@ const Register = () => {
 
     return (
         <AppContainer>
-            { loggedIn && <Redirect to="/posts" />}
+            { loggedIn && <Redirect to="/dashboard" />}
             <form onSubmit={onFormSubmit} className="mt-3">
                 <h1>Register for MeFit</h1>
                 <p>Complete the form to create an account</p>
                 <div className="mb-3">
-                    <label htmlFor="username" className="form-label">Choose a username *</label>
-                    <input id="username" type="text" placeholder="johndoe" onChange={onInputChange} className="form-control" />
+                    <label htmlFor="email" className="form-label">Choose a email *</label>
+                    <input id="email" type="email" placeholder="johndoe@email.dk" onChange={onInputChange} className="form-control" />
                 </div>
 
                 <div className="mb-3">
-                    <label htmlFor="password" className="form-label">Choose a password *</label>
-                    <input id="password" type="password" placeholder="******" onChange={onInputChange} className="form-control" />
+                    <label htmlFor="firstname" className="form-label">First name *</label>
+                    <input id="firstname" type="text" placeholder="John" onChange={onInputChange} className="form-control" />
                 </div>
 
                 <div className="mb-3">
-                    <label htmlFor="password" className="form-label">Confirm your password *</label>
-                    <input id="confirmPassword" type="password" placeholder="******" onChange={onInputChange} className="form-control" />
+                    <label htmlFor="lastname" className="form-label">Last name *</label>
+                    <input id="lastname" type="text" placeholder="Doe" onChange={onInputChange} className="form-control" />
                 </div>
 
                

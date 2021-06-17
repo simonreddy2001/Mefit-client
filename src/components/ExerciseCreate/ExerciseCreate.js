@@ -13,17 +13,18 @@ const ExerciseCreate = () => {
     const [exercise, setExercise] = useState({
         name: '',
         description: '',
+        targetMuscleGroup: '',
         postError: ''
     })
 
     const onPostSubmit = e => {
         e.preventDefault()
 
-        if (!exercise.name || !exercise.description) {
+        if (!exercise.name || !exercise.description || !exercise.targetMuscleGroup) {
             mySwal.fire({
                 backdrop: true,
                 title: <p>Missed something</p>,
-                html: '<span class="material-icons">error</span><br>Please make sure you add a <b>title</b> and a <b>body</b> for the post 👌',
+                html: '<span class="material-icons">error</span><br>Please make sure you add a <b>name</b>, <b>description</b> and a <b>targetMuscleGroup</b>for the post 👌',
                 confirmButtonText: 'Gotcha'
             }).then(_ => {})
             return;
@@ -33,6 +34,7 @@ const ExerciseCreate = () => {
         setExercise({
             name: '',
             description: '',
+            targetMuscleGroup: '',
             exerciseError: ''
         })
     }
@@ -80,7 +82,7 @@ const ExerciseCreate = () => {
                                     ></textarea>
                     </div>
 
-                    <button className="btn btn-warning d-flex" type="submit">
+                    <button className="btn btn-primary d-flex" type="submit">
                         <span className="material-icons">create</span> &nbsp;
                         <span>Create Exercise</span>
                     </button>

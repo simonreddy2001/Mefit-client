@@ -4,7 +4,7 @@ import { loginReducer } from "./loginReducer";
 import { exercisesReducer } from "./exercisesReducer";
 import { workoutsReducer } from "./workoutsReducer";
 import { programsReducer } from "./programsReducer";
-import { profilePostsReducer } from "./profilePostsReducer";
+import { profileReducer } from "./profileReducer";
 import { registerReducer } from "./registerReducer";
 import { sessionReducer } from "./sessionReducer";
 
@@ -15,7 +15,7 @@ const appReducer = combineReducers({
     workoutsReducer,
     programsReducer,
     registerReducer,
-    profilePostsReducer
+    profileReducer
 })
 
 const rootReducer = (state, action) => {

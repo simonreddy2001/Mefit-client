@@ -15,7 +15,7 @@ export function KeycloakProvider({ children }) {
         setState({
             keycloak,
             initialising: false,
-            authenticated: true
+            authenticated: true,
         });
     }
 

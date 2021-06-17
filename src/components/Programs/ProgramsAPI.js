@@ -3,7 +3,7 @@ import { API_ERROR_INVALID_AUTH } from "../../util/api.util"
 export const ProgramsAPI = {
     getPrograms() {
         //const { token } = JSON.parse(localStorage.getItem('rtxt-ss'))
-        return fetch('https://localhost:44339/api/v1/goals', {
+        return fetch('https://localhost:44339/api/v1/programs', {
             headers: {
                 'Content-Type': 'application/json',
                 //'Authorization': `Bearer ${token}`

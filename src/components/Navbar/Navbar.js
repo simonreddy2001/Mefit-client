@@ -3,19 +3,26 @@ import { Link, NavLink } from "react-router-dom"
 import AppContainer from "../../hoc/AppContainer"
 import 'bootstrap/dist/js/bootstrap.bundle'
 
+
 export const Navbar = () => {
     const { username } = useSelector(state => state.sessionReducer)
+    const { email } = useSelector(state => state.sessionReducer)
     return (
         <nav className="navbar navbar-expand-md navbar-light bg-light mb-3 fixed-top">
             <AppContainer>
+                <img src=""></img>
                 <Link className="navbar-brand" to="/profile">MeFit</Link>
-                {username &&
+                {//username &&
+                
                     <>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
                             <span className="navbar-toggler-icon"></span>
                         </button>
                         <div className="collapse navbar-collapse" id="mainNavbar">
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li className="nav-item">
+                                    <NavLink className="nav-link" to="/dashboard">Dashboard</NavLink>
+                                </li>
                                 <li className="nav-item">
                                     <NavLink className="nav-link" to="/exercises">Exercises</NavLink>
                                 </li>
@@ -25,13 +32,17 @@ export const Navbar = () => {
                                 <li className="nav-item">
                                     <NavLink className="nav-link" to="/programs">Programs</NavLink>
                                 </li>
+                                <li className="nav-item">
+                                    <NavLink className="nav-link" to="/register">Register</NavLink>
+                                </li>
+
                             </ul>
 
                             <ul className="navbar-nav ml-auto">
                                 <li className="nav-item">
                                     <NavLink className="nav-link d-flex" to="/profile">
                                         <span className="material-icons">account_circle</span>
-                                        &nbsp;Welcome, {username}
+                                        &nbsp;Welcome, {email}
                                     </NavLink>
                                 </li>
                             </ul>
