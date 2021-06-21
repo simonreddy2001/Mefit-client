@@ -2,7 +2,7 @@ import { ACTION_SESSION_CLEAR, ACTION_SESSION_LOGOUT, ACTION_SESSION_SET } from 
 
 const initialState = {
     id: '',
-    username: '',
+    email: '',
     lastLogin: '',
     createdAt: '',
     token: '',

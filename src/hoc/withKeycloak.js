@@ -1,4 +1,4 @@
-const { useContext } = require("react")
+/*const { useContext } = require("react")
 const { Redirect } = require("react-router")
 const { KeycloakContext } = require("../context/KeycloakContext")
 
@@ -23,4 +23,4 @@ const withKeycloak = Component => props => {
 
 }
 
-export default withKeycloak
+export default withKeycloak*/

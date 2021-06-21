@@ -1,11 +1,11 @@
-export const RegisterAPI = {
-    register({ email, password }) {
+export const LoginAPI = {
+    login(credentials) {
         return fetch('https://localhost:44339/api/v1/users', {
-            method: 'POST',
+            method: 'GET',
             headers: {
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ email, password})
+            body: JSON.stringify(credentials)
         }).then(async response => {
             if (!response.ok) {
                 const { error = 'An unknown error occurred' } = await response.json()

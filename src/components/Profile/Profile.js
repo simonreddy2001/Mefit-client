@@ -9,7 +9,7 @@ export const Profile = () => {
 
     const mySwal = withReactContent(Swal)
     const dispatch = useDispatch()
-    const { firstName = '' } = useSelector(state => state.sessionReducer)
+    const { email = '' } = useSelector(state => state.sessionReducer)
     const onLogoutClick = () => {
         mySwal.fire({
             backdrop: true,
@@ -30,7 +30,7 @@ export const Profile = () => {
     return (
         <AppContainer>
             <header className="mb-5">
-                <h1>Hi, {firstName}</h1>
+                <h1>Hi, {email}</h1>
                 <p>Welcome to your profile</p>
                 <button className="btn btn-warning" onClick={onLogoutClick}>Logout</button>
             </header>

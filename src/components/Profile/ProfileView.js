@@ -1,9 +1,9 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { profileFetchingAction } from "../../store/actions/profileActions"
-import Exercise from "../Exercises/Exercise"
-import Program from "../Programs/Program"
-import Workout from "../Workouts/Workout"
+//import Exercise from "../Exercises/Exercise"
+//import Program from "../Programs/Program"
+//import Workout from "../Workouts/Workout"
 
 const Profile = () => {
 
@@ -12,13 +12,13 @@ const Profile = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(profileFetchingAction(session.id))
+        dispatch(profileFetchingAction())
     }, [dispatch, session])
 
     return (
         <>
             <h4 className="mb-3">Checkout your goals</h4>
-            <section> {profile}</section>
+            <section> {profile.map(profile =><Profile key={profile.id} profile={profile} />)} </section>
         </>
 
     )

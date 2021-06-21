@@ -1,4 +1,4 @@
-import Keycloak from "keycloak-js";
+/*import Keycloak from "keycloak-js";
 import { createContext, useEffect, useState } from "react";
 
 export const KeycloakContext = createContext()
@@ -17,6 +17,7 @@ export function KeycloakProvider({ children }) {
             initialising: false,
             authenticated: true,
         });
+        console.log(keycloak)
     }
 
     const handleKeycloakInitError = error => {
@@ -66,4 +67,4 @@ export function KeycloakProvider({ children }) {
             {children}
         </KeycloakContext.Provider>
     )
-}
+}*/

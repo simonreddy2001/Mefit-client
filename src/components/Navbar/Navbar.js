@@ -2,17 +2,17 @@ import { useSelector } from "react-redux"
 import { Link, NavLink } from "react-router-dom"
 import AppContainer from "../../hoc/AppContainer"
 import 'bootstrap/dist/js/bootstrap.bundle'
+import logo from '../../Assets/logo.jpg'
 
 
 export const Navbar = () => {
-    const { username } = useSelector(state => state.sessionReducer)
     const { email } = useSelector(state => state.sessionReducer)
     return (
         <nav className="navbar navbar-expand-md navbar-light bg-light mb-3 fixed-top">
+            <div><img src={logo} alt="Logo"></img></div>
             <AppContainer>
-                <img src=""></img>
                 <Link className="navbar-brand" to="/profile">MeFit</Link>
-                {//username &&
+                {email &&
                 
                     <>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
