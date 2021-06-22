@@ -5,7 +5,7 @@ export const sessionMiddleware = ({ dispatch }) => next => action => {
     next(action)
 
     if (action.type === ACTION_SESSION_INIT) {
-        const storedSession = localStorage.getItem('rtxt-ss')
+        const storedSession = localStorage.getItem('accessToken')
         if (!storedSession) {
             return;
         }
@@ -14,11 +14,11 @@ export const sessionMiddleware = ({ dispatch }) => next => action => {
     }
 
     if (action.type === ACTION_SESSION_SET) {
-        localStorage.setItem('rtxt-ss', JSON.stringify(action.payload))
+        localStorage.setItem('accessToken', JSON.stringify(action.payload))
     }
 
     if (action.type === ACTION_SESSION_CLEAR) {
-        localStorage.removeItem('rtxt-ss')
+        localStorage.removeItem('accessToken')
     }
 
     if (action.type === ACTION_SESSION_LOGOUT) {

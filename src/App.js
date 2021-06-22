@@ -7,7 +7,7 @@ import Programs from './components/Programs/Programs';
 import Workouts from './components/Workouts/Workouts';
 import Profile from './components/Profile/Profile';
 import Register from './components/Register/Register';
-import RoutePrivate from './hoc/RoutePrivate';
+//import RoutePrivate from './hoc/RoutePrivate';
 
 
 function App() {
@@ -22,10 +22,10 @@ function App() {
           </Route>
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
-          <RoutePrivate path="/exercises" component={Exercises} />
-          <RoutePrivate path="/workouts" component={Workouts} />
-          <RoutePrivate path="/programs" component={Programs} />
-          <RoutePrivate path="/profile" component={Profile} />
+          <Route path="/exercises" component={Exercises} />
+          <Route path="/workouts" component={Workouts} />
+          <Route path="/programs" component={Programs} />
+          <Route path="/profile" component={Profile} />
         </Switch>
       </div>
     </BrowserRouter>

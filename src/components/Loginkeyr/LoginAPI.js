@@ -1,7 +1,7 @@
-export const LoginAPI = {
+/*export const LoginAPI = {
     login(credentials) {
         return fetch('https://localhost:44339/api/v1/users', {
-            method: 'GET',
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -14,4 +14,4 @@ export const LoginAPI = {
             return response.json()
         })
     }
-}
+}*/

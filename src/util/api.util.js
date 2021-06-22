@@ -4,7 +4,7 @@ export const API_ERROR_INVALID_AUTH = 'INVALID_AUTH_TOKEN'
 export const ApiUtil = {
     headers() {
         let token;
-        const session = localStorage.getItem('rtxt-ss');
+        const session = localStorage.getItem('accessToken');
         if (session) {
             token = JSON.parse(session).token
         }
