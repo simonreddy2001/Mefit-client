@@ -1,5 +1,5 @@
 export const RegisterAPI = {
-    register({ email, password }) {
+    register({ email, }) {
         return fetch('https://localhost:44339/api/v1/users', {
             method: 'POST',
             headers: {

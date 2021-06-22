@@ -1,24 +1,34 @@
 import Keycloak from "keycloak-js";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState, useContext } from "react";
 
 export const KeycloakContext = createContext()
-
+export const useKeycloak = () => {
+    return useContext(KeycloakContext)
+}
 export function KeycloakProvider({ children }) {
 
     const [state, setState] = useState({
         keycloak: null,
         initialising: true,
-        authenticated: false
+        redirectToDashboard: null
     });
-//async function to fetch 
+    //async function to fetch 
     const handleKeycloakInitSuccess = keycloak => {
+        fetch(`https://localhost:44339/api/v1/users/users/${keycloak.email}`).then(async response => {
+                    if (!response.ok) {
+                        setState({
+                            redirectToDashboard: true
+                        })
+                    }
+                })
+            
+
         //make a call to backened check if the user exists (results bool)
         //check profile need to be completed (if its false)
-         
+
         setState({
             keycloak,
-            initialising: false,
-            authenticated: true,
+            initialising: false
         });
         console.log(keycloak)
     }
@@ -36,7 +46,7 @@ export function KeycloakProvider({ children }) {
         const keycloak = new Keycloak('/keycloak.json')
         keycloak.init({ onLoad: 'check-sso' }).then(_ => handleKeycloakInitSuccess(keycloak))
             .catch(handleKeycloakInitError)
-            
+
 
     }, [])
 

@@ -1,8 +1,8 @@
 {
-    "realm": "MeFit",
-    "auth-server-url": "http://localhost:8083/auth/",
-    "ssl-required": "external",
-    "resource": "mefit",
-    "public-client": true,
-    "confidential-port": 0
-  }
+  "realm": "MeFit",
+  "auth-server-url": "http://localhost:8083/auth/",
+  "ssl-required": "external",
+  "resource": "mefit",
+  "public-client": true,
+  "confidential-port": 0
+}

@@ -7,14 +7,16 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import store from './store';
 import { sessionInitAction } from './store/actions/sessionActions';
-//import { KeycloakProvider } from './context/KeycloakContext';
+import { KeycloakProvider } from './context/KeycloakContext';
 
 store.dispatch(sessionInitAction());
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+    <KeycloakProvider>
+    <App />
+    </KeycloakProvider>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

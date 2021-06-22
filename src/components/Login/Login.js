@@ -1,10 +1,10 @@
 import { useContext } from "react"
 import { Redirect } from "react-router"
-import { KeycloakContext } from "../../context/KeycloakContext"
+import { useKeycloak } from "../../context/KeycloakContext"
 
 const Login = () => {
 
-    const { keycloak, initialising } = useContext(KeycloakContext)
+    const { keycloak, initialising } = useKeycloak()
 
     console.log(keycloak);
     console.log(initialising);
@@ -29,7 +29,7 @@ const Login = () => {
             {!initialising &&
                 <main>
                     {(keycloak && keycloak.authenticated) &&
-                        <Redirect to="/exercises" />
+                        <Redirect to="/dashboard" />
                     }
                     <article className="card mb-4 col text-center">
                         <h1 className="card-title">Login to MeFit App</h1>

@@ -1,4 +1,4 @@
-export const API_ERROR_INVALID_AUTH = 'INVALID_AUTH_TOKEN'
+/*export const API_ERROR_INVALID_AUTH = 'INVALID_AUTH_TOKEN'
 
 
 export const ApiUtil = {
@@ -27,4 +27,4 @@ export const ApiUtil = {
 
         return response.json()
     }
-}
+}*/
