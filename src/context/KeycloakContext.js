@@ -20,14 +20,14 @@ export function KeycloakProvider({ children }) {
                 setState({
                     redirectToRegister: true,
                     keycloak,
-                    initialising: false
+                    initialising: false,
                 })
             }
-            else{
+            else {
                 setState({
                     redirectToRegister: false,
                     keycloak,
-                    initialising: false
+                    initialising: false,
                 })
             }
 
@@ -39,8 +39,10 @@ export function KeycloakProvider({ children }) {
 
         
         console.log(keycloak)
+        
+        //console.log("fjdjfkd",keycloak.hasRole(["admin"]))
     }
-
+    
     const handleKeycloakInitError = error => {
         console.error('Keycloak Init Error', error);
     }
@@ -80,6 +82,7 @@ export function KeycloakProvider({ children }) {
     return (
         <KeycloakContext.Provider value={state}>
             {children}
+            
         </KeycloakContext.Provider>
     )
 }

@@ -1,9 +1,9 @@
 import { API_ERROR_INVALID_AUTH } from "../../util/api.util"
 
 export const ProfileViewAPI = {
-    getProfile(profileId) {
+    getProfile(email) {
         //const { token } = JSON.parse(localStorage.getItem('accessToken'))
-        return fetch(`https://localhost:44339/api/v1/profiles/${profileId}`, {
+        return fetch(`https://localhost:44339/api/v1/profiles/profiles/${email}`, {
             headers: {
                 'Content-Type': 'application/json',
                // 'Authorization': `Bearer ${token}`

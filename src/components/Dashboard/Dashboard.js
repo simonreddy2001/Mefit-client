@@ -5,6 +5,8 @@ import { KeycloakContext } from "../../context/KeycloakContext"
 import withKeycloak from "../../hoc/withKeycloak"
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
+import Calender from "./Calender"
+import { DashboardAPI } from "../Dashboard/DashboardAPI"
 //import DatePicker from 'react-datetime'
 
 const Dashboard = () => {
@@ -16,6 +18,7 @@ const Dashboard = () => {
         dashboard: null,
         loading: true
     })
+    
     const mySwal = withReactContent(Swal)
     const onLogoutClick = () => {
         mySwal.fire({
@@ -70,11 +73,11 @@ const Dashboard = () => {
                 <h1>Hi, {}</h1>
                 <p>Welcome to your profile</p>    
             </header>
-
+<Calender />
             <pre>
                 {JSON.stringify(state.dashboard)}
             </pre>
-            
+            <p>{}</p>
             <article className="card mb-4">
             <section className="card-body">
                 <h4 className="card-title">{}</h4>

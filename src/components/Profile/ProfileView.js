@@ -10,7 +10,7 @@ const Profile = () => {
     const { profile } = useSelector(state => state.profileReducer)
     const session = useSelector(state => state.sessionReducer)
     const dispatch = useDispatch()
-
+console.log(profile)
     useEffect(() => {
         dispatch(profileFetchingAction())
     }, [dispatch, session])
