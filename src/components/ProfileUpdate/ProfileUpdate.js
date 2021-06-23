@@ -12,6 +12,7 @@ const ProfileUpdate = () => {
     //const { loggedIn } = useSelector(state => state.sessionReducer)
 
     const [addProfile, setAddProfile] = useState({
+        email: '',
         weight: '',
         height: '',
         medicalConditions: '',
@@ -37,6 +38,10 @@ const ProfileUpdate = () => {
             <form onSubmit={onFormSubmit} className="mt-3">
                 <h1>Update your profile for MeFit</h1>
                 <p>Complete the form to add profile</p>
+                <div className="mb-3">
+                    <label htmlFor="email" className="form-label">Choose a email *</label>
+                    <input id="email" type="email" placeholder="johndoe@email.dk" onChange={onInputChange} className="form-control" />
+                </div>
                 <div className="mb-3">
                     <label htmlFor="weight" className="form-label">Weight</label>
                     <input id="weight" type="text" placeholder="95.5" onChange={onInputChange} className="form-control" />

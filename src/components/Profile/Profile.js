@@ -32,7 +32,7 @@ export const Profile = () => {
             <header className="mb-5">
                 <h1>Hi, {email}</h1>
                 <p>Welcome to your profile</p>
-                <button className="btn btn-warning" onClick={onLogoutClick}>Logout</button>
+                {/*<button className="btn btn-warning" onClick={onLogoutClick}>Logout</button>*/}
             </header>
 
             <ProfileView />

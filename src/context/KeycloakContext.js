@@ -15,23 +15,29 @@ export function KeycloakProvider({ children }) {
     });
     //async function to fetch 
     const handleKeycloakInitSuccess = keycloak => {
-        fetch(`https://localhost:44339/api/v1/users/users/${keycloak.email}`).then(async response => {
-                    if (!response.ok) {
-                        setState({
-                            redirectToRegister: true
-                        })
-                    }
-                    
+        fetch(`https://localhost:44339/api/v1/profiles/profiles/${keycloak.email}`).then(async response => {
+            if (!response.ok) {
+                setState({
+                    redirectToRegister: true,
+                    keycloak,
+                    initialising: false
                 })
-            
+            }
+            else{
+                setState({
+                    redirectToRegister: false,
+                    keycloak,
+                    initialising: false
+                })
+            }
+
+        })
+
 
         //make a call to backened check if the user exists (results bool)
         //check profile need to be completed (if its false)
 
-        setState({
-            keycloak,
-            initialising: false
-        });
+        
         console.log(keycloak)
     }
 

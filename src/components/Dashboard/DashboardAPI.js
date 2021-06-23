@@ -1,8 +1,8 @@
 import { API_ERROR_INVALID_AUTH } from "../../util/api.util"
 
 
-export const DashboardAPI = {
-    getDashboard(email) {
+export const DashboardProfileAPI = {
+    getDashboardProfile(email) {
         //const { token } = JSON.parse(localStorage.getItem('accessToken'))
         return fetch(`https://localhost:44339/api/v1/profiles/profiles/${email}`, {
             headers: {

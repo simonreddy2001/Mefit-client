@@ -3,6 +3,8 @@ import { useContext, useEffect } from "react"
 import { Link, useHistory } from "react-router-dom"
 import { KeycloakContext } from "../../context/KeycloakContext"
 import withKeycloak from "../../hoc/withKeycloak"
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 //import DatePicker from 'react-datetime'
 
 const Dashboard = () => {
@@ -14,7 +16,26 @@ const Dashboard = () => {
         dashboard: null,
         loading: true
     })
-   
+    const mySwal = withReactContent(Swal)
+    const onLogoutClick = () => {
+        mySwal.fire({
+            backdrop: true,
+            denyButtonText: 'Cancel',
+            showCancelButton: true,
+            confirmButtonColor: 'var(--bs-yellow)',
+            cancelButtonColor: 'var(--bs-teal)',
+            title: <p>Logout?</p>,
+            text: 'Are you sure you want to logout?',
+            cancelButtonText: 'Nope',
+            confirmButtonText: 'Yes, Logout'
+        }).then(result => {
+            if (result.isConfirmed) {
+                keycloak.logout().then(() => {
+                    history.push('/')
+                });
+            }
+        })
+    }
     useEffect(() => {
 
         if (initialising) return;
@@ -31,7 +52,7 @@ const Dashboard = () => {
             })
     }, [])
 
-    const onLogoutClick = () => {
+    /*const onLogoutClick = () => {
 
         if (!window.confirm('Are you sure?')) {
             return;
@@ -40,12 +61,16 @@ const Dashboard = () => {
         keycloak.logout().then(() => {
             history.push('/')
         });
-    }
+    }*/
     
 
     return (
         <main>
-            <p>Welcome to your Dashboard</p>
+           <header className="mb-5">
+                <h1>Hi, {}</h1>
+                <p>Welcome to your profile</p>    
+            </header>
+
             <pre>
                 {JSON.stringify(state.dashboard)}
             </pre>
@@ -59,7 +84,7 @@ const Dashboard = () => {
                 Email: {} 
             </section>
             <section className="card-footer btn-toolbar">
-                <button className="btn btn-secondary d-flex" type="submit"><Link to="/profile">Back to profile</Link></button>
+                <button className="btn btn-outline-primary d-flex" type="submit"><Link to="/profile">Back to profile</Link></button>
                 <button className="btn btn-danger d-flex" type="submit" onClick={onLogoutClick}>Logout</button>
             </section>
     </article>

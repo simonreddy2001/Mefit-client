@@ -13,8 +13,8 @@ const Register = () => {
 
     const [user, setUser] = useState({
         email: '',
-        password: '',
-        confirmPassword: '',
+        firstName: '',
+        lastName: '',
     })
 
     const onInputChange = e => {
