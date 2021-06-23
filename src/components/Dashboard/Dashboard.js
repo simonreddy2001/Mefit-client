@@ -3,6 +3,7 @@ import { useContext, useEffect } from "react"
 import { Link, useHistory } from "react-router-dom"
 import { KeycloakContext } from "../../context/KeycloakContext"
 import withKeycloak from "../../hoc/withKeycloak"
+//import DatePicker from 'react-datetime'
 
 const Dashboard = () => {
 
@@ -13,14 +14,16 @@ const Dashboard = () => {
         dashboard: null,
         loading: true
     })
-
+   
     useEffect(() => {
 
         if (initialising) return;
-
+        
         keycloak.loadUserProfile()
             .then(dashboard => {
+                
                 console.log(dashboard);
+                
                 setState({
                     loading: false,
                     dashboard
@@ -38,18 +41,29 @@ const Dashboard = () => {
             history.push('/')
         });
     }
+    
 
     return (
         <main>
-            <h1>Dashboard</h1>
             <p>Welcome to your Dashboard</p>
-            <button onClick={onLogoutClick}>Logout</button>
-            <p>
-                <Link to="/profile">Back to profile</Link>
-            </p>
             <pre>
                 {JSON.stringify(state.dashboard)}
             </pre>
+            
+            <article className="card mb-4">
+            <section className="card-body">
+                <h4 className="card-title">{}</h4>
+                <p className="card-text">{}</p>
+            </section>
+            <section className="card-footer">
+                Email: {} 
+            </section>
+            <section className="card-footer btn-toolbar">
+                <button className="btn btn-secondary d-flex" type="submit"><Link to="/profile">Back to profile</Link></button>
+                <button className="btn btn-danger d-flex" type="submit" onClick={onLogoutClick}>Logout</button>
+            </section>
+    </article>
+    
         </main>
     )
 }

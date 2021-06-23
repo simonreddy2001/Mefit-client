@@ -18,6 +18,11 @@ const Profile = () => {
     return (
         <>
             <h4 className="mb-3">Checkout your goals</h4>
+            <section className="card-body">
+                <h4 className="card-title">First Name: {profile.firstName}</h4>
+                <h4 className="card-text">{profile.lastName}</h4>
+                <p className="card-text">{profile.email}</p>
+            </section>
             <section> {profile.map(profile =><Profile key={profile.id} profile={profile} />)} </section>
         </>
 

@@ -6,15 +6,16 @@ import logo from '../../Assets/logo.jpg'
 import Keycloak from "keycloak-js"
 
 
+
 export const Navbar = () => {
-    const { username } = useSelector(state => state.sessionReducer)
+    const { email } = useSelector(state => state.sessionReducer)
     return (
         <nav className="navbar navbar-expand-md navbar-light bg-light mb-3 fixed-top">
             <div><img src={logo} alt="Logo"></img></div>
             <AppContainer>
                 <Link className="navbar-brand" to="/profile">MeFit</Link>
                 {
-                
+    
                     <>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
                             <span className="navbar-toggler-icon"></span>
@@ -33,7 +34,12 @@ export const Navbar = () => {
                                 <li className="nav-item">
                                     <NavLink className="nav-link" to="/programs">Programs</NavLink>
                                 </li>
-                                
+                                <li className="nav-item">
+                                    <NavLink className="nav-link" to="/register">Register</NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink className="nav-link" to="/profileUpdate">Profile-Update</NavLink>
+                                </li>
 
                             </ul>
 
@@ -41,7 +47,7 @@ export const Navbar = () => {
                                 <li className="nav-item">
                                     <NavLink className="nav-link d-flex" to="/profile">
                                         <span className="material-icons">account_circle</span>
-                                        &nbsp;Welcome, {Keycloak.username}
+                                        &nbsp;Welcome, {email}
                                     </NavLink>
                                 </li>
                             </ul>

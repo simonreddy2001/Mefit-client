@@ -10,16 +10,18 @@ export function KeycloakProvider({ children }) {
     const [state, setState] = useState({
         keycloak: null,
         initialising: true,
-        redirectToDashboard: null
+        redirectToRegister: null,
+
     });
     //async function to fetch 
     const handleKeycloakInitSuccess = keycloak => {
         fetch(`https://localhost:44339/api/v1/users/users/${keycloak.email}`).then(async response => {
                     if (!response.ok) {
                         setState({
-                            redirectToDashboard: true
+                            redirectToRegister: true
                         })
                     }
+                    
                 })
             
 

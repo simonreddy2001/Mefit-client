@@ -40,7 +40,7 @@ const Register = () => {
                     <label htmlFor="email" className="form-label">Choose a email *</label>
                     <input id="email" type="email" placeholder="johndoe@email.dk" onChange={onInputChange} className="form-control" />
                 </div>
-                <div className="mb-3">
+                {/*<div className="mb-3">
                     <label htmlFor="password" className="form-label">Choose a password *</label>
                     <input id="password" type="password" placeholder="******" onChange={onInputChange} className="form-control" />
                 </div>
@@ -48,8 +48,8 @@ const Register = () => {
                 <div className="mb-3">
                     <label htmlFor="password" className="form-label">Confirm your password *</label>
                     <input id="confirmPassword" type="password" placeholder="******" onChange={onInputChange} className="form-control" />
-                </div>
-                {/*<div className="mb-3">
+                </div>*/}
+                <div className="mb-3">
                     <label htmlFor="firstname" className="form-label">First name *</label>
                     <input id="firstname" type="text" placeholder="John" onChange={onInputChange} className="form-control" />
                 </div>
@@ -57,7 +57,7 @@ const Register = () => {
                 <div className="mb-3">
                     <label htmlFor="lastname" className="form-label">Last name *</label>
                     <input id="lastname" type="text" placeholder="Doe" onChange={onInputChange} className="form-control" />
-                </div>*/}
+                </div>
 
                
 

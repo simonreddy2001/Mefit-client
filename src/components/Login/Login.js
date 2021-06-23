@@ -29,7 +29,7 @@ const Login = () => {
             {!initialising &&
                 <main>
                     {(keycloak && keycloak.authenticated) &&
-                        <Redirect to="/dashboard" />
+                        <Redirect to="/profile" />
                     }
                     <article className="card mb-4 col text-center">
                         <h1 className="card-title">Login to MeFit App</h1>
