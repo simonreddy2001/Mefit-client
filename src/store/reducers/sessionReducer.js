@@ -1,10 +1,7 @@
 import { ACTION_SESSION_CLEAR, ACTION_SESSION_LOGOUT, ACTION_SESSION_SET } from "../actions/sessionActions";
 
 const initialState = {
-    id: '',
-    email: '',
-    lastLogin: '',
-    createdAt: '',
+    profileEmail: '',
     token: '',
     loggedIn: false
 }
@@ -13,7 +10,9 @@ export const sessionReducer = (state = { ...initialState }, action) => {
 
         case ACTION_SESSION_SET:
             return {
-                ...action.payload,
+                ...state,
+                profileEmail: action.profileEmail,
+                token: action.payload,
                 loggedIn: true
             }
         case ACTION_SESSION_CLEAR:

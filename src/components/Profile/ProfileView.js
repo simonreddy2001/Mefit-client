@@ -23,7 +23,7 @@ console.log(profile)
                 <h4 className="card-text">Last Name:{profile.lastName}</h4>
                 <h4 className="card-text">Email: {profile.email}</h4>
             </section>
-            <section> {profile.map(profile =><Profile key={profile.id} profile={profile} />)} </section>
+            <section> {profile.map(profile =><Profile key={profile.email} profile={profile} />)} </section>
         </>
 
     )

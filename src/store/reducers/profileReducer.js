@@ -19,7 +19,7 @@ export const profileReducer = (state = {...initialState}, action) => {
             return {
                 profileError: '',
                 profileFetching: false,
-                profile: [...action.payload]
+                profile: action.payload
             }
         case ACTION_PROFILE_ERROR:
             return {

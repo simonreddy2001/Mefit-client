@@ -11,16 +11,16 @@ export function KeycloakProvider({ children }) {
         keycloak: null,
         initialising: true,
         redirectToRegister: null,
-
     });
     //async function to fetch 
     const handleKeycloakInitSuccess = keycloak => {
-        fetch(`https://localhost:44339/api/v1/profiles/profiles/${keycloak.email}`).then(async response => {
+        fetch(`https://localhost:44339/api/v1/profiles`).then(async response => {
             if (!response.ok) {
                 setState({
                     redirectToRegister: true,
                     keycloak,
                     initialising: false,
+                    
                 })
             }
             else {
